@@ -11,12 +11,14 @@
     <a-scene background="color: #FAFAFA">
       <a-sky id="image-360" src="canyon.png"></a-sky>
       
-        <a-entity camera position="0 1.6 0" animation="property: position; to: 0 1.6 -12; delay: 500; loop: true" rotation="0 180 0">
+      <a-entity id="camera-container" animation="property: position; to: 0 1.6 -12; delay: 500; loop: true" rotation="0 180 0">
+        <a-entity camera position="0 1.6 0">
             <a-animation attribute="position"
                     dur="2000"
                     easing="linear"
                     to="0 1.6 -10"></a-animation>
           </a-entity>
+        </a-entity>
       <a-box color="#6173F4" opacity="0.8" depth="2" position="0 0 -15" shadow></a-box>
       <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="12" color="#1eb25c" shadow></a-plane>
     </a-scene>
