@@ -29,7 +29,7 @@
           const step = 0.4
           const player = document.querySelector("a-camera")
           let r = player.getAttribute('rotation');
-          var pos = player.getAttribute("position")
+          var pos = player.getAttribute("position");
           pos.x += step * sin(r.y);
           pos.y += step * tan(r.x);
           pos.z += step * cos(r.y);
@@ -41,16 +41,16 @@
   </head>
   <body>
     <a-scene background="color: #FAFAFA">
+        <a-assets>
+            <audio id="op" src="./assets/dbzop.mp3`"></audio>
+            <a-asset-item id="goku" src="./assets/Goku_fly.gltf"></a-asset-item>
+          </a-assets>
+        <a-sound src="#op"></a-sound>
       <!-- yavapai, volcano, threetowers, arches, goldmine, -->
-<<<<<<< HEAD
-      <a-entity environment="preset: arches" >
-          <a-entity id="camera-container" animation="property: position; to: 0 16 -150; delay: 500; loop:true; dur:5000" rotation=" 0 -90 0">
-              <a-entity camera position="0 1.6 0">
-=======
       <a-entity environment="preset: arches">
           <a-entity id="camera-container" >
               <a-camera position="0 1.6 0" fly>
->>>>>>> 77361338d0d68621ebc45b3e1ff12cd05a1aa492
+                  <a-gltf-model position="0 0 -1" src="#goku" scale="2.5 2.5 2.5" id="heroe" rotation="0 180 0"></a-gltf-model>
                   <a-animation attribute="position"
                           dur="2000"
                           easing="linear" 
