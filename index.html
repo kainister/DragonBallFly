@@ -28,21 +28,12 @@
         tick() {
           const step = 0.4
           const player = document.querySelector("a-camera")
-          const goku = document.querySelector("#heroe")
           let r = player.getAttribute('rotation');
           var pos = player.getAttribute("position");
           pos.x += step * sin(r.y);
           pos.y += step * tan(r.x);
           pos.z += step * cos(r.y);
-
-          let r2 = goku.getAttribute('rotation');
-          var pos2 = goku.getAttribute("position");
-          pos2.y += step * tan(r.x) + tan(r2.x);
-          pos2.x += step * sin(r.y) + sin(r2.y);
-          pos2.z += step * cos(r.y);
-
           player.setAttribute("position", pos);
-          goku.setAttribute("position", pos2);
         }
       })
     </script>
@@ -58,8 +49,8 @@
       <!-- yavapai, volcano, threetowers, arches, goldmine, -->
       <a-entity environment="preset: arches">
           <a-entity id="camera-container" >
-              <a-gltf-model position="0 1.5 0" src="#goku" scale="2.5 2.5 2.5" id="heroe" rotation="0 180 0"></a-gltf-model>
               <a-camera position="0 1.6 0" fly>
+                  <a-gltf-model position="0 0 -1" src="#goku" scale="2.5 2.5 2.5" id="heroe" rotation="0 180 0"></a-gltf-model>
                   <a-animation attribute="position"
                           dur="2000"
                           easing="linear" 
