@@ -6,6 +6,7 @@
     <meta name="description" content="Hello, WebVR! • A-Frame">
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
     <script type="text/javascript" src="./script.js"></script>
   </head>
   <body>
@@ -18,9 +19,10 @@
       <!-- yavapai, volcano, threetowers, arches, goldmine, -->
       <a-entity environment="preset: arches; seed: 8; groundYScale: 20; playArea: 1;">
         <a-entity id="camera-container" movement-controls="enabled: true">
+          <a-sphere color="yellow" radius='5' position="0 160 -120"></a-sphere>
           <a-camera position="0 1.6 0" fly look-controls>
-            <!-- <a-sound src="src: url(dbzop.mp3)" autoplay="true" loop="true"></a-sound> -->
-            <a-gltf-model position="0 0 -1" src="#goku" scale="2.5 25 2.5" id="heroe" rotation="0 180 0"></a-gltf-model>
+            <a-sound src="src: url(./assets/dbop.mp3)" autoplay="true" loop="true"></a-sound>
+            <a-gltf-model position="0 -0.2 -0.5" src="#goku" scale="2.5 2.5 2.5" id="heroe" rotation="-20 180 0"></a-gltf-model>
             <a-animation attribute="position"
                   dur="2000"
                   easing="linear" 
