@@ -7,39 +7,28 @@
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
     <script type="text/javascript" src="./script.js"></script>
-    <!-- <script>
-    AFRAME.registerComponent("fly", {
-            schema: {
-                stepFactor: { type: "number", default: 0.5 },
-                isFlying: { type: "boolean", default: true }
-            },
-            tick: function () {
-                if (this.data.isFlying) {
-                    let newP = this.el.components.camera.camera.parent.position.add(this.el.components.camera.camera.getWorldDirection().multiplyScalar(this.data.stepFactor));
-                    this.el.setAttribute('position', newP)
-                }
-            }
-        });</script> -->
   </head>
   <body>
-    <a-scene background="color: #FAFAFA">
+    <a-scene background="color: #000000">
         <a-assets>
-            <audio id="op" src="./assets/dbzop.mp3`"></audio>
             <a-asset-item id="goku" src="./assets/Goku_fly.gltf"></a-asset-item>
           </a-assets>
         <a-sound src="#op"></a-sound>
+        <!-- <a-entity environment="preset: arches; seed: 8; groundYScale: 20; playArea: 1;"></a-entity> -->
         <a-entity environment="preset: volcano;"></a-entity>
       <!-- yavapai, volcano, threetowers, arches, goldmine, -->
       <a-entity environment="preset: arches; seed: 8; groundYScale: 20; playArea: 1;">
-          <a-entity id="camera-container" movement-controls="enabled: true">
-              <a-camera position="0 1.6 0" fly look-controls>
-                  <a-gltf-model position="0 0 -1" src="#goku" scale="2.5 2.5 2.5" id="heroe" rotation="0 180 0"></a-gltf-model>
-                  <a-animation attribute="position"
-                          dur="2000"
-                          easing="linear" 
-                          to="0 1.6 -10"></a-animation>
-                </a-entity>
-              </a-entity>
+        <a-entity id="camera-container" movement-controls="enabled: true">
+          <a-camera position="0 1.6 0" fly look-controls>
+            <a-sound src="src: url(dbzop.mp3)" autoplay="true" loop="true"></a-sound>
+            <a-gltf-model position="0 0 -1" src="#goku" scale="2.5 2.5 2.5" id="heroe" rotation="0 180 0"></a-gltf-model>
+            <a-animation attribute="position"
+                  dur="2000"
+                  easing="linear" 
+                  to="0 1.6 -10">
+            </a-animation>
+          </a-camera>
+        </a-entity>
       </a-entity>
     </a-scene>
   </body>
