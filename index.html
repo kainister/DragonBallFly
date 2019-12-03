@@ -14,14 +14,13 @@
             <a-asset-item id="goku" src="./assets/Goku_fly.gltf"></a-asset-item>
           </a-assets>
         <a-sound src="#op"></a-sound>
-        <!-- <a-entity environment="preset: arches; seed: 8; groundYScale: 20; playArea: 1;"></a-entity> -->
         <a-entity environment="preset: volcano;"></a-entity>
       <!-- yavapai, volcano, threetowers, arches, goldmine, -->
       <a-entity environment="preset: arches; seed: 8; groundYScale: 20; playArea: 1;">
         <a-entity id="camera-container" movement-controls="enabled: true">
           <a-camera position="0 1.6 0" fly look-controls>
-            <a-sound src="src: url(dbzop.mp3)" autoplay="true" loop="true"></a-sound>
-            <a-gltf-model position="0 0 -1" src="#goku" scale="2.5 2.5 2.5" id="heroe" rotation="0 180 0"></a-gltf-model>
+            <!-- <a-sound src="src: url(dbzop.mp3)" autoplay="true" loop="true"></a-sound> -->
+            <a-gltf-model position="0 0 -1" src="#goku" scale="2.5 25 2.5" id="heroe" rotation="0 180 0"></a-gltf-model>
             <a-animation attribute="position"
                   dur="2000"
                   easing="linear" 
