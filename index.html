@@ -4,61 +4,33 @@
     <meta charset="utf-8">
     <title>Dragon Ball Fly</title>
     <meta name="description" content="Hello, WebVR! • A-Frame">
-    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
-    <script>
-      function cos(v) {
-        return Math.cos((v - 180) * (Math.PI / 180.0));
-      }
-
-      function sin(v) {
-        return Math.sin((v - 180) * (Math.PI / 180.0));
-      }
-
-
-      function tan(v) {
-        return Math.tan((v - 180) * (Math.PI / 180.0));
-      }
-
-
-      AFRAME.registerComponent("fly", {
-        init: function() {
-          
-        },
-        tick() {
-          const step = 0.4
-          const player = document.querySelector("a-camera")
-          let r = player.getAttribute('rotation');
-          var pos = player.getAttribute("position");
-          pos.x += step * sin(r.y);
-          pos.y += step * tan(r.x);
-          pos.z += step * cos(r.y);
-          player.setAttribute("position", pos);
-        }
-      })
-    </script>
-
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script type="text/javascript" src="./script.js"></script>
   </head>
   <body>
-    <a-scene background="color: #FAFAFA">
+    <a-scene background="color: #000000">
         <a-assets>
-            <audio id="op" src="./assets/dbzop.mp3`"></audio>
             <a-asset-item id="goku" src="./assets/Goku_fly.gltf"></a-asset-item>
           </a-assets>
         <a-sound src="#op"></a-sound>
+        <!-- <a-entity environment="preset: arches; seed: 8; groundYScale: 20; playArea: 1;"></a-entity> -->
         <a-entity environment="preset: volcano;"></a-entity>
       <!-- yavapai, volcano, threetowers, arches, goldmine, -->
       <a-entity environment="preset: arches; seed: 8; groundYScale: 20; playArea: 1;">
-          <a-entity id="camera-container" >
-              <a-camera position="0 1.6 0" fly>
-                  <a-gltf-model position="0 0 -1" src="#goku" scale="2.5 2.5 2.5" id="heroe" rotation="0 180 0"></a-gltf-model>
-                  <a-animation attribute="position"
-                          dur="2000"
-                          easing="linear" 
-                          to="0 1.6 -10"></a-animation>
-                </a-entity>
-              </a-entity>
-            <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="12" color="#1eb25c" shadow></a-plane>
+        <a-entity id="camera-container" movement-controls="enabled: true">
+          <a-sphere color="yellow" radius='5' position="0 160 -120"></a-sphere>
+          <a-camera position="0 1.6 0" fly look-controls>
+            <a-sound src="src: url(./assets/dbop.mp3)" autoplay="true" loop="true"></a-sound>
+            <a-gltf-model position="0 -0.2 -0.5" src="#goku" scale="2.5 2.5 2.5" id="heroe" rotation="-20 180 0"></a-gltf-model>
+            <a-animation attribute="position"
+                  dur="2000"
+                  easing="linear" 
+                  to="0 1.6 -10">
+            </a-animation>
+          </a-camera>
+        </a-entity>
       </a-entity>
     </a-scene>
   </body>
