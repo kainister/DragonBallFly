@@ -46,8 +46,9 @@
             <a-asset-item id="goku" src="./assets/Goku_fly.gltf"></a-asset-item>
           </a-assets>
         <a-sound src="#op"></a-sound>
+        <a-entity environment="preset: volcano;"></a-entity>
       <!-- yavapai, volcano, threetowers, arches, goldmine, -->
-      <a-entity environment="preset: arches">
+      <a-entity environment="preset: arches; seed: 8; groundYScale: 20; playArea: 1;">
           <a-entity id="camera-container" >
               <a-camera position="0 1.6 0" fly>
                   <a-gltf-model position="0 0 -1" src="#goku" scale="2.5 2.5 2.5" id="heroe" rotation="0 180 0"></a-gltf-model>
@@ -57,7 +58,6 @@
                           to="0 1.6 -10"></a-animation>
                 </a-entity>
               </a-entity>
-            <a-box color="#6173F4" opacity="0.8" depth="2" position="0 0 -15" shadow></a-box>
             <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="12" color="#1eb25c" shadow></a-plane>
       </a-entity>
     </a-scene>
