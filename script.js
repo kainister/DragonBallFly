@@ -21,6 +21,7 @@ function cos(v) {
       const player = document.querySelector("a-camera")
       let r = player.getAttribute('rotation');
       var pos = player.getAttribute("position");
+      var rot = player.getAttribute("rotation");
       pos.x += step * sin(r.y);
       pos.y += step * tan(r.x);
       pos.z += step * cos(r.y);
