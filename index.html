@@ -16,22 +16,21 @@
         </a-assets>
       <a-sound src="#op"></a-sound>
       <!-- <a-entity environment="preset: arches; seed: 8; groundYScale: 20; playArea: 1;"></a-entity> -->
-      <a-entity environment="preset: volcano;"></a-entity>
+      <a-entity environment="preset: volcano;" scale="2 2 2"></a-entity>
       <!-- yavapai, volcano, threetowers, arches, goldmine, -->
-      <a-entity environment="preset: arches; seed: 8; groundYScale: 20; playArea: 1;">
-        <a-entity id="camera-container" movement-controls="enabled: true">
-          <a-sphere color="green" radius='5' position="0 80 -100"></a-sphere>
-          <a-camera position="0 1.6 0" fly look-controls static-body>
-            <a-sound src="src: url(./assets/dbop.mp3)" autoplay="true" loop="true"></a-sound>
-            <a-sound src="src: url(./assets/fly.mp3)" autoplay="true"></a-sound>
-            <a-gltf-model position="0 -0.2 -0.5" src="#goku" scale="2.5 2.5 2.5" id="heroe" rotation="-20 180 0"></a-gltf-model>
-            <a-animation attribute="position"
-                  dur="2000"
-                  easing="linear" 
-                  to="0 1.6 -10">
-            </a-animation>
-          </a-camera>
-        </a-entity>
+      <a-entity environment="preset: arches; seed: 8; groundYScale: 20;" scale="2 2 2"></a-entity>
+      <a-entity id="camera-container" movement-controls="enabled: true">
+        <a-sphere color="green" radius='5' position="0 80 -100"></a-sphere>
+        <a-camera position="0 1.6 0" fly look-controls static-body>
+          <a-sound src="src: url(./assets/dbop.mp3)" autoplay="true" loop="true"></a-sound>
+          <a-sound src="src: url(./assets/fly.mp3)" autoplay="true"></a-sound>
+          <a-gltf-model position="0 -0.2 -0.5" src="#goku" scale="2.5 2.5 2.5" id="heroe" rotation="-20 180 0"></a-gltf-model>
+          <a-animation attribute="position"
+                dur="2000"
+                easing="linear" 
+                to="0 1.6 -10">
+          </a-animation>
+        </a-camera>
       </a-entity>
     </a-scene>
   </body>
