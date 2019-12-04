@@ -11,7 +11,6 @@ function cos(v) {
     return Math.tan((v - 180) * (Math.PI / 180.0));
   }
 
-
   AFRAME.registerComponent("fly", {
     init: function() {
       
