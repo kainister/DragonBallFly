@@ -18,9 +18,10 @@ function cos(v) {
     tick() {
       const step = 0.7
       const player = document.querySelector("a-camera")
+      const goku = document.querySelector("a-gltf-model")
       let r = player.getAttribute('rotation');
       var pos = player.getAttribute("position");
-      var rot = player.getAttribute("rotation");
+      var rot = goku.getAttribute("rotation");
       pos.x += step * sin(r.y);
       pos.y += step * tan(r.x);
       pos.z += step * cos(r.y);
@@ -44,5 +45,22 @@ function cos(v) {
         pos.z = -180;
       }
       player.setAttribute("position", pos);
+
+      if (rot.z <= 0) {
+        setTimeout(function(){
+          for(let i = 0; i <= 5; i++){
+            rot.z = i;
+            goku.setAttribute("rotation", rot)
+          }
+        },1000)
+      }
+      if(rot.z === 5){
+        setTimeout(function(){
+          for(let i = 5; i >= -5; i--){
+            rot.z = i;
+            goku.setAttribute("rotation", rot)
+          }
+        },1000)
+      }
     }
   })
